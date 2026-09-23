@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frufru</title>
+
+  <!-- Fontes: uma serifada para títulos (personalidade) e uma sem serifa para o corpo do texto (leitura confortável) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== 1. ABERTURA ===================== -->
+  <section class="section hero" id="hero">
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <p class="hero__eyebrow">para</p>
+    <h1 class="hero__name">Tásia</h1>
+    <p class="hero__phrase">Isto aqui não é sobre um começo repentino. É sobre tudo aquilo que foi crescendo devagarinho até se tornar nisto.</p>
+    <div class="hero__scroll" id="scrollCue">
+      <span></span>
+      <p>desliza para ler</p>
+    </div>
+  </section>
+
+  <!-- ===================== 1.5 A CARTA ===================== -->
+  <section class="section carta-section" id="carta">
+    <div class="content">
+      <p class="section__eyebrow">antes de começar</p>
+      <h2>Tenho uma cartinha para ti</h2>
+      <p>Antes de continuares a ler, abre o envelope.</p>
+      <div class="envelope" id="envelope">
+        <div class="envelope__flap"></div>
+        <div class="envelope__body">
+          <span class="envelope__coracao">❤</span>
+        </div>
+        <div class="envelope__carta" id="envelopeCarta">
+          <p>Escrevi tudo isto com calma, para tentares perceber o que se passou dentro de mim
+          desde que te conheci. Continua a descer para leres a nossa história. 💌</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. COMO TUDO COMEÇOU ===================== -->
+  <section class="section" id="comeco">
+    <div class="content">
+      <h2>Como tudo começou</h2>
+      <p>
+        Nós conhecemo-nos no Tang Soo Do. No início, era só isso: nos conheciamos de vista.
+        Eras apenas amiga de Angelo, e irma de Laerte, mas
+        nós próprios quase não trocávamos palavra.
+      </p>
+      <p>
+        Não houve faísca no primeiro dia, nem "amor à primeira vista". Houve treino, houve rotina,
+        houve os nossos encontros no dojang sem sabermos que, com o tempo, aquilo se ia transformar noutra coisa.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 3. A APROXIMAÇÃO ===================== -->
+  <section class="section section--alt" id="aproximacao">
+    <div class="content">
+      <h2>Quando começámos a aproximar-nos</h2>
+      <p>
+        De conhecidos, fomo-nos tornando pessoas que conversavam todos dias.
+      </p>
+
+      <div class="highlight">
+        <p>
+          Houve um dia em que você me mandou um TikTok de doce e beijo. No dia seguinte levei
+          um doce para você — e você abraçou-me. Foi simples, mas eu lembro-me exactamente de como foi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. LINHA DO TEMPO ===================== -->
+  <section class="section" id="momentos">
+    <div class="content">
+      <h2>Os nossos momentos</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__marker"></span>
+          <h3>O dojang</h3>
+          <p>Onde tudo começou.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__marker"></span>
+          <h3>As primeiras conversas</h3>
+          <p>De trocar poucas palavras para trocar mensagens todos os dias. Sem darmos por isso, tornou-se hábito.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__marker"></span>
+          <h3>O doce e o abraço</h3>
+          <p>Um TikTok, um doce no dia seguinte, um abraço. Pequeno para quem via de fora, grande para mim.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__marker"></span>
+          <h3>As brincadeiras</h3>
+          <p>Provocação, riso, minha forma de demostrar interesse.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ===================== 4.5 RASPADINHA ===================== -->
+  <section class="section section--alt" id="raspadinha">
+    <div class="content">
+      <p class="section__eyebrow">raspa e descobre</p>
+      <h2>Há uma coisa escondida aqui</h2>
+      <p>Passa o dedo ou o rato por cima do cartão cinzento para descobrires o que está por baixo.</p>
+      <div class="scratch-wrap">
+        <div class="scratch-reveal" id="scratchReveal">
+          <p>Desde o primeiro dia que reparei em ti no dojang. Nunca te disse. Até agora. ❤️</p>
+        </div>
+        <canvas class="scratch-canvas" id="scratchCanvas" width="600" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4.6 GALERIA DE FOTOS ===================== -->
+  <section class="section" id="galeria">
+    <div class="content">
+      <p class="section__eyebrow">momentos guardados</p>
+      <h2>A nossa galeria</h2>
+      <p>Este espaço está reservado para as nossas fotos.</p>
+      <div class="gallery gallery--single" id="gallery">
+        <div class="gallery__item"><img src="foto1.jpeg" alt="O dojang"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. NOSSA CONEXÃO MUSICAL ===================== -->
+  <section class="section music-section" id="musicas">
+    <div class="content">
+      <p class="section__eyebrow">uma parte só nossa</p>
+      <h2>A nossa ligação musical</h2>
+      <p>Cada música que você acrescentou à minha playlist ganhou um significado especial. Se calhar para você eram só músicas, mas para mim ficaram ligadas a você e aos momentos em que a nossa história foi acontecendo.</p>
+      <div class="music-note"><span class="music-note__icon">♪</span><div><h3>Uma playlist com a nossa história</h3><p>Porque há pessoas que entram na nossa vida e, sem darmos conta, deixam até uma banda sonora.</p></div></div>
+
+      <div class="music-player">
+        <audio id="playerMusica" src="musica.mp3" preload="metadata"></audio>
+        <button class="music-player__botao" id="btnTocar" aria-label="Tocar música">▶</button>
+        <div class="music-player__info">
+          <h3>Só me ligar</h3>
+          <p>A música que ficou a ser nossa.</p>
+        </div>
+      </div>
+
+      <div class="music-player">
+        <audio id="playerMusica2" src="musica2.mp3" preload="metadata"></audio>
+        <button class="music-player__botao" id="btnTocar2" aria-label="Tocar música">▶</button>
+        <div class="music-player__info">
+          <h3>Nice to each other</h3>
+          <p>Mais uma faixa da nossa banda sonora.</p>
+        </div>
+      </div>
+
+      <div class="music-cards">
+        <article class="music-card"><span class="music-card__number">01</span><h3>Cada música</h3><p>Tem uma lembrança, uma conversa ou simplesmente aquele pensamento em você.</p></article>
+        <article class="music-card"><span class="music-card__number">02</span><h3>Cada descoberta</h3><p>Quando você acrescentava uma música, eu não via só uma faixa nova na playlist.</p></article>
+        <article class="music-card"><span class="music-card__number">03</span><h3>Uma banda sonora</h3><p>No fim, a nossa história também acabou por ganhar músicas que agora sempre me vão lembrar de você.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. O QUE EU SINTO ===================== -->
+  <section class="section section--alt" id="sinto">
+    <div class="content content--narrow">
+      <h2>O que eu sinto</h2>
+      <p>
+        Não vim aqui te dizer que me apaixonei do nada, porque não foi assim. Foi treino atrás
+        de treino, conversa atrás de conversa, até eu perceber que andava a te procurar com o olhar
+        sem notar que estava a fazer isso.
+      </p>
+      <p>
+        Você tornou-se alguém que eu quero por perto  não só na hora do treino, mas também nos dias
+        normais. E já me cansei de guardar isto só para mim.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 7. A PERGUNTA FINAL ===================== -->
+  <section class="section pergunta" id="pergunta">
+    <div class="pergunta__box" id="perguntaBox">
+      <p class="pergunta__eyebrow">e depois de tudo isto...</p>
+      <p class="pergunta__texto">Tásia queres escrever o próximo capítulo comigo?</p>
+      <p class="pergunta__subtexto">Se a resposta for sim, eu vou estar do outro lado desta mensagem. ❤️</p>
+      <div class="pergunta__botoes">
+        <button class="btn btn--sim" id="btnSim">Sim</button>
+        <button class="btn btn--talvez" id="btnTalvez">Dá-me um tempinho para pensar</button>
+      </div>
+    </div>
+
+    <div class="resposta" id="respostaSim" hidden>
+      <p>Então vamos treinar juntos com mais um motivo agora. </p>
+    </div>
+
+    <div class="resposta" id="respostaTalvez" hidden>
+      <p>Sem problema nenhum. Não precisas de responder já — só queria que soubesses.</p>
+    </div>
+  </section>
+
+  <script>
+    const btnSim = document.getElementById("btnSim");
+    const btnTalvez = document.getElementById("btnTalvez");
+    const respostaSim = document.getElementById("respostaSim");
+    const respostaTalvez = document.getElementById("respostaTalvez");
+
+    btnSim.addEventListener("click", () => {
+      const numero = "258841366129";
+      const mensagem = "Sim ❤️ Eu quero escrever o próximo capítulo com você.";
+      const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+      respostaSim.hidden = false;
+      respostaTalvez.hidden = true;
+      setTimeout(() => { window.location.href = url; }, 500);
+    });
+
+    btnTalvez.addEventListener("click", () => {
+      const numero = "258841366129";
+      const mensagem = "Preciso de mais um tempinho para pensar, mas queria que soubesses que li tudo. 💭";
+      const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+      respostaTalvez.hidden = false;
+      respostaSim.hidden = true;
+      setTimeout(() => { window.location.href = url; }, 500);
+    });
+
+    const elementos = document.querySelectorAll(".section, .timeline__item");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    elementos.forEach((elemento) => observer.observe(elemento));
+
+    // Player de música
+    const audio = document.getElementById("playerMusica");
+    const btnTocar = document.getElementById("btnTocar");
+    btnTocar.addEventListener("click", () => {
+      if (audio.paused) {
+        if (typeof audio2 !== "undefined") { audio2.pause(); btnTocar2.textContent = "▶"; }
+        audio.play();
+        btnTocar.textContent = "❚❚";
+      } else {
+        audio.pause();
+        btnTocar.textContent = "▶";
+      }
+    });
+    audio.addEventListener("ended", () => { btnTocar.textContent = "▶"; });
+
+    const audio2 = document.getElementById("playerMusica2");
+    const btnTocar2 = document.getElementById("btnTocar2");
+    btnTocar2.addEventListener("click", () => {
+      if (audio2.paused) {
+        audio.pause();
+        btnTocar.textContent = "▶";
+        audio2.play();
+        btnTocar2.textContent = "❚❚";
+      } else {
+        audio2.pause();
+        btnTocar2.textContent = "▶";
+      }
+    });
+    audio2.addEventListener("ended", () => { btnTocar2.textContent = "▶"; });
+
+    // Corações a flutuar no hero
+    const heartsBox = document.getElementById("floatingHearts");
+    function criarCoracao() {
+      const c = document.createElement("span");
+      c.className = "floating-hearts__item";
+      c.textContent = "❤";
+      c.style.left = Math.random() * 100 + "%";
+      c.style.animationDuration = (5 + Math.random() * 4) + "s";
+      c.style.fontSize = (0.8 + Math.random() * 1.2) + "rem";
+      heartsBox.appendChild(c);
+      setTimeout(() => c.remove(), 9000);
+    }
+    setInterval(criarCoracao, 700);
+
+    // Envelope / carta
+    const envelope = document.getElementById("envelope");
+    envelope.addEventListener("click", () => {
+      envelope.classList.toggle("aberto");
+    });
+
+    // Raspadinha
+    const canvas = document.getElementById("scratchCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#b5495b";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#faf5f2";
+    ctx.font = "600 1.1rem Jost, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("raspa aqui ✦", canvas.width / 2, canvas.height / 2);
+    ctx.globalCompositeOperation = "destination-out";
+
+    let scratching = false;
+    function coordsFromEvent(e) {
+      const rect = canvas.getBoundingClientRect();
+      const point = e.touches ? e.touches[0] : e;
+      return {
+        x: (point.clientX - rect.left) * (canvas.width / rect.width),
+        y: (point.clientY - rect.top) * (canvas.height / rect.height)
+      };
+    }
+    function raspar(e) {
+      const { x, y } = coordsFromEvent(e);
+      ctx.beginPath();
+      ctx.arc(x, y, 26, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    canvas.addEventListener("mousedown", () => { scratching = true; });
+    canvas.addEventListener("mouseup", () => { scratching = false; });
+    canvas.addEventListener("mouseleave", () => { scratching = false; });
+    canvas.addEventListener("mousemove", (e) => { if (scratching) raspar(e); });
+    canvas.addEventListener("touchstart", (e) => { raspar(e); });
+    canvas.addEventListener("touchmove", (e) => { raspar(e); e.preventDefault(); }, { passive: false });
+    </script>
+</body>
+</html>

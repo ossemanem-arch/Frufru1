@@ -1,0 +1,365 @@
+/* =========================================================
+   VARIÁVEIS DE COR E TIPOGRAFIA
+   Paleta: vinho profundo, rosa envelhecido e branco quente.
+   Mantida enxuta de propósito — poucas cores, usadas com
+   consistência, em vez de muitas cores "bonitinhas".
+   ========================================================= */
+:root {
+  --vinho: #4a1220;
+  --vinho-escuro: #2c0b13;
+  --rosa: #b5495b;
+  --rosa-claro: #e7c7ce;
+  --branco-quente: #faf5f2;
+  --texto: #2c1418;
+  --texto-suave: #6e4a51;
+
+  --fonte-titulo: 'Cormorant Garamond', serif;
+  --fonte-corpo: 'Jost', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--texto);
+  background: var(--branco-quente);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--vinho);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--vinho);
+  margin-bottom: 0.4rem;
+}
+
+p {
+  max-width: 640px;
+  font-size: 1.05rem;
+  color: var(--texto);
+}
+
+/* =========================================================
+   ESTRUTURA GERAL DAS SEÇÕES
+   ========================================================= */
+.section {
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section--alt {
+  background: var(--rosa-claro);
+}
+
+.content {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content--narrow {
+  max-width: 560px;
+}
+
+/* Estado inicial + revelado usado pelo script.js para o fade suave ao rolar */
+.section, .timeline__item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.is-visible, .timeline__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--vinho-escuro), var(--vinho) 60%);
+  color: var(--branco-quente);
+  opacity: 1;
+  transform: none;
+}
+
+.hero__eyebrow {
+  font-family: var(--fonte-corpo);
+  letter-spacing: 0.15em;
+  color: var(--rosa-claro);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero__name {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 600;
+  color: var(--branco-quente);
+}
+
+.hero__phrase {
+  margin-top: 1.5rem;
+  max-width: 480px;
+  color: var(--rosa-claro);
+  font-size: 1.1rem;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--rosa-claro);
+}
+
+.hero__scroll span {
+  width: 1px;
+  height: 32px;
+  background: var(--rosa-claro);
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+
+.hero__scroll p {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--rosa-claro);
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.5; }
+  50% { transform: scaleY(0.5); opacity: 1; }
+}
+
+/* =========================================================
+   3. DESTAQUE (o doce e o abraço)
+   ========================================================= */
+.highlight {
+  border-left: 2px solid var(--rosa);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.highlight p {
+  font-style: italic;
+  color: var(--vinho);
+}
+
+/* =========================================================
+   4. LINHA DO TEMPO
+   ========================================================= */
+.timeline {
+  list-style: none;
+  text-align: left;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  border-left: 2px solid var(--rosa-claro);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 2.5rem 2rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__marker {
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rosa);
+  border: 2px solid var(--branco-quente);
+}
+
+.timeline__item p {
+  color: var(--texto-suave);
+  font-size: 0.98rem;
+}
+
+/* =========================================================
+   6. PERGUNTA FINAL
+   ========================================================= */
+.pergunta {
+  min-height: 100vh;
+  justify-content: center;
+  background: var(--vinho-escuro);
+  color: var(--branco-quente);
+}
+
+.pergunta__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.pergunta__texto {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--branco-quente);
+  max-width: 600px;
+}
+
+.pergunta__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--rosa-claro);
+  background: transparent;
+  color: var(--branco-quente);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn--sim {
+  background: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--sim:hover {
+  background: #c85a6d;
+}
+
+.btn--talvez:hover {
+  background: rgba(250, 245, 242, 0.1);
+}
+
+.resposta {
+  margin-top: 2.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  color: var(--rosa-claro);
+  text-align: center;
+  max-width: 480px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 480px) {
+  .section {
+    padding: 4.5rem 1.2rem;
+  }
+}
+
+
+/* =========================================================
+   DETALHES ROMÂNTICOS
+   ========================================================= */
+.section__eyebrow, .pergunta__eyebrow { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rosa); margin-bottom: .7rem; }
+.music-section { background: radial-gradient(circle at 15% 20%, rgba(181,73,91,.12), transparent 30%), var(--branco-quente); }
+.music-note { width:100%; display:flex; align-items:center; gap:1rem; margin:2.2rem 0 1.5rem; padding:1.3rem 1.4rem; text-align:left; border:1px solid var(--rosa-claro); border-radius:18px; background:rgba(255,255,255,.45); box-shadow:0 12px 35px rgba(74,18,32,.07); }
+.music-note__icon { min-width:48px; height:48px; display:grid; place-items:center; border-radius:50%; background:var(--vinho); color:var(--branco-quente); font-family:var(--fonte-titulo); font-size:1.8rem; }
+.music-note h3,.music-note p { margin:0; } .music-note p { margin-top:.25rem; font-size:.95rem; color:var(--texto-suave); }
+.music-player { width:100%; display:flex; align-items:center; gap:1.1rem; margin:0 0 1.8rem; padding:1.1rem 1.4rem; border-radius:999px; border:1px solid var(--rosa-claro); background:var(--vinho); box-shadow:0 12px 35px rgba(74,18,32,.15); }
+.music-player__botao { flex-shrink:0; width:52px; height:52px; border-radius:50%; border:none; background:var(--rosa); color:var(--branco-quente); font-size:1.1rem; cursor:pointer; display:grid; place-items:center; transition:transform .2s ease, background .2s ease; }
+.music-player__botao:hover { transform:scale(1.06); background:#c85a6d; }
+.music-player__info { text-align:left; }
+.music-player__info h3 { color:var(--branco-quente); margin-bottom:.15rem; }
+.music-player__info p { margin:0; color:var(--rosa-claro); font-size:.9rem; }
+.music-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; width:100%; margin-top:1rem; }
+.music-card { position:relative; padding:1.5rem; text-align:left; border-radius:18px; border:1px solid var(--rosa-claro); background:#fffaf8; transition:transform .3s ease, box-shadow .3s ease; }
+.music-card:hover { transform:translateY(-5px); box-shadow:0 14px 30px rgba(74,18,32,.1); }
+.music-card__number { display:block; margin-bottom:.8rem; color:var(--rosa); font-size:.75rem; letter-spacing:.12em; }
+.music-card p { color:var(--texto-suave); font-size:.95rem; }
+.pergunta__eyebrow { color:var(--rosa-claro); margin-bottom:0; } .pergunta__subtexto { max-width:480px; color:var(--rosa-claro); font-size:.95rem; }
+@media (max-width:700px) { .music-cards { grid-template-columns:1fr; } .music-card { text-align:center; } .music-note { align-items:flex-start; } }
+
+/* =========================================================
+   CORAÇÕES A FLUTUAR
+   ========================================================= */
+.floating-hearts { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+.floating-hearts__item { position:absolute; bottom:-2rem; color:var(--rosa-claro); opacity:.75; animation:subirCoracao linear forwards; }
+@keyframes subirCoracao {
+  0% { transform:translateY(0) translateX(0) scale(.8); opacity:0; }
+  10% { opacity:.85; }
+  100% { transform:translateY(-110vh) translateX(20px) scale(1.1); opacity:0; }
+}
+
+/* =========================================================
+   CARTA / ENVELOPE
+   ========================================================= */
+.carta-section { padding-top:3rem; }
+.envelope { position:relative; width:260px; height:170px; margin:2rem auto 0; cursor:pointer; }
+.envelope__body { position:absolute; inset:0; background:var(--vinho); border-radius:8px; display:grid; place-items:center; box-shadow:0 14px 30px rgba(74,18,32,.2); overflow:hidden; }
+.envelope__body::before, .envelope__body::after { content:""; position:absolute; top:0; width:0; height:0; border-top:85px solid var(--vinho-escuro); }
+.envelope__body::before { left:0; border-left:130px solid transparent; }
+.envelope__body::after { right:0; border-right:130px solid transparent; }
+.envelope__coracao { color:var(--rosa-claro); font-size:1.6rem; z-index:1; transition:opacity .3s ease; }
+.envelope__flap { position:absolute; top:0; left:0; width:100%; height:0; border-left:130px solid transparent; border-right:130px solid transparent; border-top:95px solid var(--rosa); transform-origin:top; transition:transform .5s ease; z-index:2; }
+.envelope__carta { position:absolute; top:10%; left:8%; width:84%; background:var(--branco-quente); border-radius:6px; padding:1.2rem; box-shadow:0 10px 24px rgba(0,0,0,.15); opacity:0; transform:translateY(0); transition:opacity .4s ease .1s, transform .4s ease .1s; z-index:0; text-align:left; }
+.envelope__carta p { font-size:.92rem; color:var(--texto); max-width:none; }
+.envelope.aberto .envelope__flap { transform:rotateX(180deg); }
+.envelope.aberto .envelope__coracao { opacity:0; }
+.envelope.aberto .envelope__carta { opacity:1; transform:translateY(-40px); z-index:3; }
+.envelope.aberto { height:230px; }
+
+/* =========================================================
+   RASPADINHA
+   ========================================================= */
+.scratch-wrap { position:relative; width:100%; max-width:600px; margin-top:1.5rem; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(74,18,32,.12); }
+.scratch-reveal { display:grid; place-items:center; min-height:220px; padding:1.5rem; background:linear-gradient(160deg, var(--vinho-escuro), var(--vinho)); }
+.scratch-reveal p { color:var(--branco-quente); font-family:var(--fonte-titulo); font-style:italic; font-size:1.2rem; text-align:center; max-width:480px; }
+.scratch-canvas { position:absolute; inset:0; width:100%; height:100%; cursor:pointer; touch-action:none; }
+
+/* =========================================================
+   GALERIA (placeholder até termos as fotos reais)
+   ========================================================= */
+.gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.9rem; width:100%; margin-top:1.5rem; }
+.gallery--single { grid-template-columns:1fr; max-width:360px; margin-left:auto; margin-right:auto; }
+.gallery__item { width:100%; height:260px; border-radius:14px; display:grid; place-items:center; gap:.4rem; background:var(--rosa-claro); border:1px dashed var(--rosa); overflow:hidden; }
+.gallery__item img { width:100%; height:100%; object-fit:cover; border-radius:14px; }
+.gallery__item:has(img) { border-style:solid; }
+.gallery__item span { font-size:1.8rem; }
+.gallery__item p { margin:0; font-size:.75rem; color:var(--texto-suave); }
+@media (max-width:600px) { .gallery { grid-template-columns:repeat(2,1fr); } .gallery__item { height:170px; } }
+
+
